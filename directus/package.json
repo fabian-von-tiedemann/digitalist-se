@@ -1,0 +1,13 @@
+{
+  "name": "digitalist-cms",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "directus start",
+    "bootstrap": "directus bootstrap"
+  },
+  "dependencies": {
+    "directus": "^11.0.0",
+    "pg": "^8.11.0"
+  }
+}
