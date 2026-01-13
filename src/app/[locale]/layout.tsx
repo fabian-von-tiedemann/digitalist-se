@@ -4,6 +4,8 @@ import { getMessages, setRequestLocale } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { inter, spaceGrotesk, jetbrainsMono } from '@/lib/fonts'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import SkipLink from '@/components/SkipLink'
 import "../globals.css"
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://digitalist.se'
@@ -77,10 +79,12 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
       <body className="font-sans bg-concrete-50 text-primary-900 antialiased">
         <NextIntlClientProvider messages={messages}>
+          <SkipLink />
           <Header />
-          <main>
+          <main id="main-content" role="main" tabIndex={-1}>
             {children}
           </main>
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

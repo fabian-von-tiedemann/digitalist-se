@@ -187,5 +187,15 @@
       "subtext": "Upptäck hur vi kan hjälpa er organisation",
       "button": "Kontakta oss"
     }
+  },
+  "footer": {
+    "copyright": "© {year} Digitalist Group AB. Alla rättigheter förbehållna."
+  },
+  "accessibility": {
+    "skipToContent": "Hoppa till innehåll",
+    "mainMenu": "Huvudmeny",
+    "openMenu": "Öppna meny",
+    "closeMenu": "Stäng meny",
+    "switchLanguage": "Byt språk"
   }
 }
