@@ -1,20 +1,78 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/routing'
 
 export default function Header() {
   const t = useTranslations('nav')
+  const tA11y = useTranslations('accessibility')
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
+  const menuRef = useRef<HTMLDivElement>(null)
+  const firstMenuItemRef = useRef<HTMLAnchorElement>(null)
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
-  const closeMobileMenu = () => {
+  const closeMobileMenu = useCallback(() => {
     setIsMobileMenuOpen(false)
-  }
+    // Return focus to hamburger button when menu closes
+    menuButtonRef.current?.focus()
+  }, [])
+
+  // Handle Escape key to close menu
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isMobileMenuOpen) {
+        closeMobileMenu()
+      }
+    }
+
+    if (isMobileMenuOpen) {
+      document.addEventListener('keydown', handleKeyDown)
+      // Focus first menu item when menu opens
+      setTimeout(() => {
+        firstMenuItemRef.current?.focus()
+      }, 100)
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isMobileMenuOpen, closeMobileMenu])
+
+  // Focus trap within mobile menu
+  useEffect(() => {
+    if (!isMobileMenuOpen || !menuRef.current) return
+
+    const menu = menuRef.current
+    const focusableElements = menu.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled])'
+    )
+    const firstElement = focusableElements[0]
+    const lastElement = focusableElements[focusableElements.length - 1]
+
+    const handleTabKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Tab') return
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstElement) {
+          e.preventDefault()
+          lastElement?.focus()
+        }
+      } else {
+        if (document.activeElement === lastElement) {
+          e.preventDefault()
+          firstElement?.focus()
+        }
+      }
+    }
+
+    menu.addEventListener('keydown', handleTabKey)
+    return () => menu.removeEventListener('keydown', handleTabKey)
+  }, [isMobileMenuOpen])
 
   const navLinks = [
     { href: '/tjanster', label: t('services') },
@@ -35,7 +93,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex md:items-center md:gap-8">
+          <nav aria-label={tA11y('mainMenu')} className="hidden md:flex md:items-center md:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -55,14 +113,16 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
+            ref={menuButtonRef}
             type="button"
             className="inline-flex items-center justify-center rounded-brutalist p-2 text-primary-900 transition-colors hover:bg-concrete-200 md:hidden"
             onClick={toggleMobileMenu}
             aria-expanded={isMobileMenuOpen}
-            aria-label={isMobileMenuOpen ? 'Stäng meny' : 'Öppna meny'}
+            aria-controls="mobile-menu"
+            aria-label={isMobileMenuOpen ? tA11y('closeMenu') : tA11y('openMenu')}
           >
             <span className="sr-only">
-              {isMobileMenuOpen ? 'Stäng meny' : 'Öppna meny'}
+              {isMobileMenuOpen ? tA11y('closeMenu') : tA11y('openMenu')}
             </span>
             {/* Hamburger Icon */}
             <svg
@@ -93,16 +153,19 @@ export default function Header() {
 
       {/* Mobile Menu Drawer */}
       <div
+        ref={menuRef}
+        id="mobile-menu"
         className={`fixed inset-x-0 top-16 z-40 transform border-b-2 border-primary-900 bg-concrete-50 shadow-brutalist-lg transition-all duration-300 ease-in-out md:hidden ${
           isMobileMenuOpen
             ? 'translate-y-0 opacity-100'
             : '-translate-y-full opacity-0 pointer-events-none'
         }`}
       >
-        <nav className="flex flex-col space-y-1 px-4 py-4">
-          {navLinks.map((link) => (
+        <nav aria-label={tA11y('mainMenu')} className="flex flex-col space-y-1 px-4 py-4">
+          {navLinks.map((link, index) => (
             <Link
               key={link.href}
+              ref={index === 0 ? firstMenuItemRef : undefined}
               href={link.href}
               className="block rounded-brutalist px-4 py-3 font-medium text-primary-800 transition-colors hover:bg-concrete-200 hover:text-accent-600"
               onClick={closeMobileMenu}
