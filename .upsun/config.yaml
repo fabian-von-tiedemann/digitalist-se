@@ -1,0 +1,84 @@
+applications:
+  # Next.js Frontend
+  frontend:
+    source:
+      root: "/"
+    type: "nodejs:20"
+
+    build:
+      flavor: none
+
+    hooks:
+      build: |
+        set -e
+        npm ci
+        npm run build
+
+    web:
+      commands:
+        start: npm start
+      locations:
+        "/":
+          passthru: true
+
+    mounts:
+      ".next/cache":
+        source: "local"
+        source_path: "cache"
+
+    relationships:
+      directus: "cms:http"
+
+  # Directus CMS
+  cms:
+    source:
+      root: "directus"
+    type: "nodejs:20"
+
+    build:
+      flavor: none
+
+    hooks:
+      build: |
+        set -e
+        npm ci
+      deploy: |
+        set -e
+        npx directus bootstrap
+
+    web:
+      commands:
+        start: npm start
+      locations:
+        "/":
+          passthru: true
+
+    mounts:
+      "uploads":
+        source: "local"
+        source_path: "uploads"
+      "extensions":
+        source: "local"
+        source_path: "extensions"
+
+    relationships:
+      database: "db:postgresql"
+
+services:
+  db:
+    type: "postgresql:16"
+
+routes:
+  # Main site
+  "https://{default}/":
+    type: upstream
+    upstream: "frontend:http"
+
+  "https://www.{default}/":
+    type: redirect
+    to: "https://{default}/"
+
+  # Directus CMS admin
+  "https://cms.{default}/":
+    type: upstream
+    upstream: "cms:http"
