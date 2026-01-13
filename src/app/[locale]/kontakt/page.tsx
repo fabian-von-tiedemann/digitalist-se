@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import ContactForm from '@/components/ContactForm'
 import TrustSignals from '@/components/TrustSignals'
@@ -6,13 +7,30 @@ type Props = {
   params: Promise<{ locale: string }>
 }
 
-export async function generateMetadata({ params }: Props) {
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://digitalist.se'
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'contact' })
+
+  const canonicalUrl = locale === 'sv' ? `${baseUrl}/kontakt` : `${baseUrl}/en/kontakt`
 
   return {
     title: t('title'),
     description: t('subtitle'),
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        'sv': `${baseUrl}/kontakt`,
+        'en': `${baseUrl}/en/kontakt`,
+      },
+    },
+    openGraph: {
+      title: `${t('title')} | Digitalist`,
+      description: t('subtitle'),
+      url: canonicalUrl,
+      locale: locale === 'sv' ? 'sv_SE' : 'en_GB',
+    },
   }
 }
 
