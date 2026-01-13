@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
+import { inter, spaceGrotesk, jetbrainsMono } from '@/lib/fonts'
 import "../globals.css"
 
 export const metadata: Metadata = {
@@ -26,8 +27,8 @@ export default async function LocaleLayout({
   const messages = await getMessages()
 
   return (
-    <html lang={locale}>
-      <body>
+    <html lang={locale} className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
+      <body className="font-sans bg-concrete-50 text-primary-900 antialiased">
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
