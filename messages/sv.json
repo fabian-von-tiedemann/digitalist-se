@@ -22,5 +22,58 @@
       "gdpr": "GDPR-kompatibel",
       "swedish": "Svensk drift"
     }
+  },
+  "dimensions": {
+    "title": "Fyra dimensioner av suverän AI",
+    "subtitle": "Komplett kapacitet för offentlig sektor",
+    "readMore": "Läs mer",
+    "shield": {
+      "title": "Skyddet",
+      "description": "Säker AI-infrastruktur som uppfyller GDPR, OSL och AI Act",
+      "features": [
+        "Stacken.ai AI-plattform",
+        "Digitalist.cloud Kubernetes",
+        "Svensk datacenter-drift"
+      ]
+    },
+    "spear": {
+      "title": "Spjutet",
+      "description": "Offensiv AI-kapacitet för konkurrensfördelar",
+      "features": [
+        "Skräddarsydda AI-lösningar",
+        "LLM-integration",
+        "Automatisering"
+      ]
+    },
+    "core": {
+      "title": "Kärnan",
+      "description": "Robust infrastruktur och dataplattform",
+      "features": [
+        "Kubernetes-orkestrering",
+        "Datapipelines",
+        "API-integration"
+      ]
+    },
+    "brain": {
+      "title": "Hjärnan",
+      "description": "Intelligens, insikter och maskininlärning",
+      "features": [
+        "ML-modeller",
+        "Prediktiv analys",
+        "Beslutsstöd"
+      ]
+    }
+  },
+  "clients": {
+    "title": "Betrodda av ledande organisationer",
+    "description": "Vi hjälper Sveriges offentliga sektor att implementera suverän AI",
+    "logos": {
+      "socialstyrelsen": "Socialstyrelsen",
+      "agency1": "Statlig myndighet",
+      "agency2": "Statlig myndighet",
+      "agency3": "Statlig myndighet",
+      "healthcare1": "Vårdorganisation",
+      "healthcare2": "Vårdorganisation"
+    }
   }
 }

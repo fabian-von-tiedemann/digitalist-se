@@ -22,5 +22,58 @@
       "gdpr": "GDPR compliant",
       "swedish": "Swedish hosting"
     }
+  },
+  "dimensions": {
+    "title": "Four dimensions of sovereign AI",
+    "subtitle": "Complete capability for the public sector",
+    "readMore": "Read more",
+    "shield": {
+      "title": "The Shield",
+      "description": "Secure AI infrastructure compliant with GDPR, OSL, and AI Act",
+      "features": [
+        "Stacken.ai AI platform",
+        "Digitalist.cloud Kubernetes",
+        "Swedish datacenter operations"
+      ]
+    },
+    "spear": {
+      "title": "The Spear",
+      "description": "Offensive AI capability for competitive advantage",
+      "features": [
+        "Custom AI solutions",
+        "LLM integration",
+        "Automation"
+      ]
+    },
+    "core": {
+      "title": "The Core",
+      "description": "Robust infrastructure and data platform",
+      "features": [
+        "Kubernetes orchestration",
+        "Data pipelines",
+        "API integration"
+      ]
+    },
+    "brain": {
+      "title": "The Brain",
+      "description": "Intelligence, insights, and machine learning",
+      "features": [
+        "ML models",
+        "Predictive analytics",
+        "Decision support"
+      ]
+    }
+  },
+  "clients": {
+    "title": "Trusted by leading organizations",
+    "description": "We help Sweden's public sector implement sovereign AI",
+    "logos": {
+      "socialstyrelsen": "National Board of Health and Welfare",
+      "agency1": "Government Agency",
+      "agency2": "Government Agency",
+      "agency3": "Government Agency",
+      "healthcare1": "Healthcare Organization",
+      "healthcare2": "Healthcare Organization"
+    }
   }
 }
