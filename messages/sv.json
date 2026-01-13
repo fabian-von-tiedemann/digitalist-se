@@ -110,5 +110,82 @@
       "healthcare1": "Vårdorganisation",
       "healthcare2": "Vårdorganisation"
     }
+  },
+  "contact": {
+    "title": "Kontakta oss",
+    "subtitle": "Vi hjälper dig att navigera i AI-landskapet",
+    "form": {
+      "name": "Namn",
+      "email": "E-post",
+      "company": "Organisation",
+      "phone": "Telefon",
+      "interest": "Intresseområde",
+      "message": "Meddelande",
+      "submit": "Skicka meddelande",
+      "submitting": "Skickar...",
+      "placeholders": {
+        "name": "Ditt namn",
+        "email": "din.epost@organisation.se",
+        "company": "Din organisation",
+        "phone": "+46 70 123 45 67",
+        "message": "Beskriv hur vi kan hjälpa dig..."
+      },
+      "interests": {
+        "select": "Välj intresseområde",
+        "shield": "Skyddet - Säker AI-infrastruktur",
+        "spear": "Spjutet - Offensiv AI-kapacitet",
+        "core": "Kärnan - Infrastruktur och dataplattform",
+        "brain": "Hjärnan - Intelligens och ML",
+        "general": "Generell förfrågan"
+      },
+      "errors": {
+        "nameRequired": "Namn är obligatoriskt (minst 2 tecken)",
+        "emailRequired": "E-post är obligatoriskt",
+        "emailInvalid": "Ange en giltig e-postadress",
+        "messageRequired": "Meddelande är obligatoriskt (minst 10 tecken)",
+        "generic": "Ett fel uppstod. Försök igen.",
+        "retry": "Försök igen"
+      },
+      "success": {
+        "title": "Tack för ditt meddelande!",
+        "message": "Vi återkommer till dig så snart som möjligt."
+      }
+    },
+    "info": {
+      "title": "Kontaktuppgifter",
+      "address": {
+        "label": "Adress",
+        "value": "Digitalist Group AB\nKungsgatan 44\n111 35 Stockholm"
+      },
+      "email": {
+        "label": "E-post",
+        "value": "hej@digitalist.se"
+      },
+      "phone": {
+        "label": "Telefon",
+        "value": "+46 8 123 45 67"
+      }
+    }
+  },
+  "newsletter": {
+    "title": "Håll dig uppdaterad",
+    "subtitle": "Få de senaste insikterna om AI, regelefterlevnad och digital transformation",
+    "placeholder": "Din e-postadress",
+    "button": "Prenumerera",
+    "submitting": "Skickar...",
+    "success": "Tack! Du är nu prenumerant.",
+    "error": "Något gick fel. Försök igen."
+  },
+  "cta": {
+    "primary": {
+      "headline": "Redo att ta nästa steg?",
+      "subtext": "Boka ett kostnadsfritt möte för att diskutera era AI-behov",
+      "button": "Boka möte"
+    },
+    "secondary": {
+      "headline": "Vill du veta mer?",
+      "subtext": "Upptäck hur vi kan hjälpa er organisation",
+      "button": "Kontakta oss"
+    }
   }
 }
