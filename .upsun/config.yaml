@@ -33,7 +33,7 @@ applications:
   cms:
     source:
       root: "directus"
-    type: "nodejs:20"
+    type: "nodejs:22"
 
     build:
       flavor: none
@@ -41,7 +41,7 @@ applications:
     hooks:
       build: |
         set -e
-        npm ci
+        npm install
       deploy: |
         set -e
         npx directus bootstrap
