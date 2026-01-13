@@ -3,6 +3,7 @@ import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/routing'
 import { getBlogPostBySlug, getRelatedBlogPosts, getAllBlogPostSlugs, type BlogPostCategory } from '@/lib/directus'
 import BlogCard from '@/components/BlogCard'
+import JsonLd from '@/components/JsonLd'
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>
@@ -73,8 +74,39 @@ export default async function BlogArticlePage({ params }: Props) {
   const colors = categoryColors[post.category]
   const categoryLabel = categoryLabels[post.category][typedLocale]
 
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://digitalist.se'
+  const postUrl = `${baseUrl}/${locale}/blogg/${slug}`
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.excerpt,
+    "datePublished": new Date(post.date_published).toISOString(),
+    "dateModified": new Date(post.date_published).toISOString(),
+    "author": {
+      "@type": "Person",
+      "name": post.author
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Digitalist",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://digitalist.se/logo.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": postUrl
+    },
+    "articleSection": categoryLabel,
+    "inLanguage": locale
+  }
+
   return (
     <main className="py-section">
+      <JsonLd data={articleSchema} />
       <article className="container mx-auto px-4">
         {/* Article header */}
         <header className="max-w-3xl mx-auto mb-12">
