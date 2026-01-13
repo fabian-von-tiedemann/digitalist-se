@@ -1,1 +1,51 @@
-{"version":"1.2","max_entries":50,"entries":[]}
+{
+  "version": "1.2",
+  "max_entries": 50,
+  "entries": [
+    {
+      "agent_id": "afe921b",
+      "task_description": "Parallel: Execute 02-01-PLAN.md (Hero + Navigation)",
+      "phase": "02",
+      "plan": "01",
+      "parallel_group": "pg-20260113-phase2",
+      "granularity": "plan",
+      "wave": 1,
+      "depends_on": [],
+      "timestamp": "2026-01-13T18:00:00Z",
+      "status": "completed",
+      "files_modified": ["src/components/Header.tsx", "src/components/Hero.tsx", "src/i18n/routing.ts", "src/app/[locale]/layout.tsx", "src/app/[locale]/page.tsx", "messages/sv.json", "messages/en.json"],
+      "completion_timestamp": "2026-01-13T18:08:00Z",
+      "deviations": ["Added createNavigation exports to routing.ts"]
+    },
+    {
+      "agent_id": "a0184fa",
+      "task_description": "Parallel: Execute 02-02-PLAN.md (Four Dimensions)",
+      "phase": "02",
+      "plan": "02",
+      "parallel_group": "pg-20260113-phase2",
+      "granularity": "plan",
+      "wave": 2,
+      "depends_on": ["02-01"],
+      "timestamp": "2026-01-13T18:10:00Z",
+      "status": "completed",
+      "files_modified": ["src/components/DimensionCard.tsx", "src/components/Dimensions.tsx", "src/app/[locale]/page.tsx", "messages/sv.json", "messages/en.json"],
+      "completion_timestamp": "2026-01-13T18:16:00Z",
+      "deviations": []
+    },
+    {
+      "agent_id": "af42df6",
+      "task_description": "Parallel: Execute 02-03-PLAN.md (Trust Signals)",
+      "phase": "02",
+      "plan": "03",
+      "parallel_group": "pg-20260113-phase2",
+      "granularity": "plan",
+      "wave": 2,
+      "depends_on": ["02-01"],
+      "timestamp": "2026-01-13T18:10:00Z",
+      "status": "completed",
+      "files_modified": ["src/components/TrustSignals.tsx", "src/components/ClientLogos.tsx", "src/app/[locale]/page.tsx", "messages/sv.json", "messages/en.json"],
+      "completion_timestamp": "2026-01-13T18:16:00Z",
+      "deviations": []
+    }
+  ]
+}
