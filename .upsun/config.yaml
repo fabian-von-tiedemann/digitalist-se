@@ -38,6 +38,15 @@ applications:
     build:
       flavor: none
 
+    variables:
+      env:
+        DB_CLIENT: "pg"
+        HOST: "0.0.0.0"
+        PORT: "8055"
+        STORAGE_LOCATIONS: "local"
+        STORAGE_LOCAL_DRIVER: "local"
+        STORAGE_LOCAL_ROOT: "/app/uploads"
+
     hooks:
       build: |
         set -e
@@ -66,6 +75,9 @@ applications:
       "extensions":
         source: "local"
         source_path: "extensions"
+      ".pm2":
+        source: "local"
+        source_path: "pm2"
 
     relationships:
       database: "db:postgresql"
