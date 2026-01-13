@@ -44,18 +44,23 @@ Progress: ███░░░░░░░ 25%
 | 01-02 | Directus 11.x | Latest stable, self-hosted |
 | 01-03 | Three-palette colors | Primary (navy), Accent (blue), Concrete (gray) |
 
+### Deployment URLs
+
+- **Frontend:** https://main-bvxea6i-gyichbvbjhhpy.eu-5.platformsh.site/
+- **Directus CMS:** https://cms.main-bvxea6i-gyichbvbjhhpy.eu-5.platformsh.site/admin
+- **Upsun Project ID:** gyichbvbjhhpy
+
 ### Deferred Issues
 
 None yet.
 
 ### Pending Todos
 
-- Manual Upsun deployment required (CLI auth needed)
-  - Run: `upsun auth:login` then `upsun push`
+None.
 
 ### Blockers/Concerns
 
-- Upsun deployment blocked on CLI authentication (config files ready)
+None.
 
 ## Session Continuity
 
