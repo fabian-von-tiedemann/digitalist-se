@@ -2,82 +2,98 @@
 
 ## What This Is
 
-En konverteringsdriven företagssajt för Digitalist Open Tech AB som positionerar bolaget som Sveriges enda öppna helhetspartner för suverän AI i offentlig sektor. Sajten samlar Digitalist, Stacken.ai och Digitalist.cloud under ett unified brand och ska generera kvalificerade leads genom thought leadership som leder till tydliga affärskonverteringar.
+En konverteringsdriven foretagssajt for Digitalist Open Tech AB som positionerar bolaget som Sveriges enda oppna helhetspartner for suveran AI i offentlig sektor. Sajten samlar Digitalist, Stacken.ai och Digitalist.cloud under ett unified brand och ska generera kvalificerade leads genom thought leadership som leder till tydliga affarskonverteringar.
+
+## Current State (v1.0)
+
+**Shipped:** 2026-01-13
+**LOC:** 3,470 TypeScript
+**Tech stack:** Next.js 15, Directus CMS, Tailwind CSS, next-intl
+**Deploy:** Upsun multi-app (frontend + CMS)
+**URLs:**
+- Frontend: https://main-bvxea6i-gyichbvbjhhpy.eu-5.platformsh.site/
+- CMS: https://cms.main-bvxea6i-gyichbvbjhhpy.eu-5.platformsh.site/admin
 
 ## Core Value
 
-**Pengar in.** Sajten ska generera affärer — varje designbeslut, varje textstycke, varje interaktion utvärderas mot frågan "leder detta till konvertering?"
+**Pengar in.** Sajten ska generera affarer — varje designbeslut, varje textstycke, varje interaktion utvarderas mot fragan "leder detta till konvertering?"
 
 ## Requirements
 
 ### Validated
 
-(None yet — ship to validate)
+- Hero-sektion som kommunicerar "Suveran AI for offentlig sektor" pa 5 sekunder — v1.0
+- De fyra dimensionerna (Shield, Spear, Core, Brain) som tydliga tjansteinganger — v1.0
+- Kundcase-sektion med Socialstyrelsen och andra dokumenterade case — v1.0
+- Trust signals: ISO-certifikat, kundloggor, synligt tidigt pa sidan — v1.0
+- Multipla konverteringspunkter: kontaktformular, CTA-banners — v1.0
+- Design: "Modern brutalism moter sci-fi" — auktoritar/solid + transparent — v1.0
+- SEO-optimerad struktur med redirects fran nuvarande sajt — v1.0
+- LLM SEO — strukturerat innehall som AI-modeller kan referera korrekt — v1.0
+- Blogg/nyhetssektion for thought leadership — v1.0
+- Flersprakarkitektur (svenska forst, engelska fardigt) — v1.0
+- WCAG-tillganglighet (offentlig sektor-krav) — v1.0
 
 ### Active
 
-- [ ] Hero-sektion som kommunicerar "Suverän AI för offentlig sektor" på 5 sekunder
-- [ ] De fyra dimensionerna (Shield, Spear, Core, Brain) som tydliga tjänsteingångar
 - [ ] Stacken.ai och Digitalist.cloud integrerade som produkter under Digitalist-paraplyet
-- [ ] Kundcase-sektion med Socialstyrelsen och andra dokumenterade case
-- [ ] Trust signals: ISO-certifikat, kundloggor, synligt tidigt på sidan
-- [ ] Multipla konverteringspunkter: Boka möte, kontaktformulär, whitepaper-nedladdning
-- [ ] Design: "Modern brutalism möter sci-fi" — auktoritär/solid + transparent
-- [ ] SEO-optimerad struktur med redirects från nuvarande sajt
-- [ ] LLM SEO — strukturerat innehåll som AI-modeller kan referera korrekt
-- [ ] Blogg/nyhetssektion för thought leadership
-- [ ] Karriärsidor för rekrytering
-- [ ] Flerspråksarkitektur (svenska först, engelska senare)
-- [ ] WCAG-tillgänglighet (offentlig sektor-krav)
+- [ ] Karriarsidor for rekrytering
+- [ ] Whitepaper-nedladdning som konverteringspunkt
+- [ ] Boka mote-funktionalitet (Calendly/Cal.com integration)
+- [ ] Actual client logos (replace placeholder text)
+- [ ] Real case study content from Directus CMS
+- [ ] Real blog content from Directus CMS
+- [ ] Production domain (digitalist.se) DNS cutover
 
 ### Out of Scope
 
 - Kundportal/inloggade sidor — hanteras separat
-- E-handel/direktköp — detta är lead generation, inte transaktioner
-- Komplex interaktiv produktdemo — case och beskrivningar räcker i v1
+- E-handel/direktkop — detta ar lead generation, inte transaktioner
+- Komplex interaktiv produktdemo — case och beskrivningar racker
 
 ## Context
 
 **Marknadssituation:**
-Sveriges offentliga sektor behöver effektivisera med 140 miljarder kr. AI är lösningen, men GDPR/OSL/AI Act blockerar amerikanska molntjänster. Digitalist äger lösningen genom fysisk kontroll + öppen källkod på svensk mark.
+Sveriges offentliga sektor behover effektivisera med 140 miljarder kr. AI ar losningen, men GDPR/OSL/AI Act blockerar amerikanska molntjanster. Digitalist ager losningen genom fysisk kontroll + oppen kallkod pa svensk mark.
 
 **Positionering:**
-"The Sovereign Powerhouse" — mellan stora drakar (Atea/CGI) och nischade teknikbolag. Vinner på fysik & frihet mot drakar, helhet & hävstång mot nischer.
+"The Sovereign Powerhouse" — mellan stora drakar (Atea/CGI) och nischade teknikbolag. Vinner pa fysik & frihet mot drakar, helhet & havstang mot nischer.
 
-**Befintlig sajt:**
-digitalist.se finns idag och ska ersättas. Innehåll ska analyseras och skrivas om för ny struktur. URL-struktur/SEO ska bevaras genom redirects.
-
-**Målgrupper (alla lika viktiga):**
-- IT-chef/CIO: Teknisk trovärdighet, arkitektur, säkerhet
-- Verksamhetschef: Affärsnytta, ROI, konkreta lösningar
-- Strateg: Vision, framtidssäkring, thought leadership
+**Malgrupper (alla lika viktiga):**
+- IT-chef/CIO: Teknisk trovardighet, arkitektur, sakerhet
+- Verksamhetschef: Affarsnytta, ROI, konkreta losningar
+- Strateg: Vision, framtidssakring, thought leadership
 
 **Sub-brands som integreras:**
-- Stacken.ai (AI-plattform) → "The Shield"
-- Digitalist.cloud (Kubernetes-infrastruktur) → "The Shield"
+- Stacken.ai (AI-plattform) -> "The Shield"
+- Digitalist.cloud (Kubernetes-infrastruktur) -> "The Shield"
 
 **Designriktning:**
-"Myndig Innovation" — inte startup-lekfullt, inte myndighetsgrått. Materialitet: betong, stål, ljusstrålar, glas. Struktur och transparens. Mashup av auktoritär/solid och transparent.
+"Myndig Innovation" — inte startup-lekfullt, inte myndighetsgratt. Materialitet: betong, stal, ljusstralar, glas. Struktur och transparens.
 
 ## Constraints
 
-- **Hosting:** Upsun.com — plattformen måste vara kompatibel
-- **Tillgänglighet:** WCAG 2.1 AA — offentlig sektor som målgrupp kräver detta
-- **Analytics:** Överväg GDPR-vänliga alternativ (Plausible/Matomo) givet målgruppen
-- **Språk:** Arkitektur för i18n från start, svenska som default
-- **SEO:** Redirects från nuvarande sajt obligatoriskt vid launch
-- **Inga SaaS-beroenden:** Allt ska vara open source och kunna köras self-hosted på Upsun
+- **Hosting:** Upsun.com — plattformen maste vara kompatibel
+- **Tillganglighet:** WCAG 2.1 AA — offentlig sektor som malgrupp kraver detta
+- **Analytics:** Overvag GDPR-vanliga alternativ (Plausible/Matomo) givet malgruppen
+- **Sprak:** Arkitektur for i18n fran start, svenska som default
+- **SEO:** Redirects fran nuvarande sajt obligatoriskt vid launch
+- **Inga SaaS-beroenden:** Allt ska vara open source och kunna koras self-hosted pa Upsun
 
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Unified brand (inte separata sub-brands) | Förenklar köpbeslut, ett Digitalist som gör allt | — Pending |
-| Hybrid approach (thought leadership → konvertering) | Offentlig sektor köper inte direkt, behöver bygga förtroende först | — Pending |
-| Svenska först, i18n-ready | Primär målgrupp är svensk offentlig sektor | — Pending |
-| **Next.js 14 + Directus + PostgreSQL** | Open source, Directus partner, multi-app på Upsun | ✅ Decided |
-| **next-intl för i18n** | Robust routing, type-safe, svenska default utan /sv prefix | ✅ Decided |
-| **Tailwind CSS + design tokens** | "Myndig Innovation" estetik, snabb utveckling | ✅ Decided |
+| Unified brand (inte separata sub-brands) | Forenklar kopbeslut, ett Digitalist som gor allt | — Pending |
+| Hybrid approach (thought leadership -> konvertering) | Offentlig sektor koper inte direkt, behover bygga fortroende forst | — Pending |
+| Svenska forst, i18n-ready | Primar malgrupp ar svensk offentlig sektor | Good |
+| **Next.js 15 + Directus + PostgreSQL** | Open source, Directus partner, multi-app pa Upsun | Good |
+| **next-intl for i18n** | Robust routing, type-safe, svenska default utan /sv prefix | Good |
+| **Tailwind CSS + design tokens** | "Myndig Innovation" estetik, snabb utveckling | Good |
+| **CSS clip-path icons** | No external icon libs, small bundle | Good |
+| **Mock data pattern** | CMS-ready but works without Directus API | Good |
+| **JsonLd component** | Reusable Schema.org injection | Good |
+| **Focus trap via Tab interception** | No external a11y library needed | Good |
 
 ---
-*Last updated: 2026-01-13 after tech stack discussion*
+*Last updated: 2026-01-13 after v1.0 milestone*
