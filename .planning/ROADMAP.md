@@ -14,7 +14,7 @@ None
 - Integer phases (1, 2, 3): Planned milestone work
 - Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
-- [ ] **Phase 1: Foundation** - Teknikstack, projektstruktur, Upsun-deploy
+- [x] **Phase 1: Foundation** - Teknikstack, projektstruktur, Upsun-deploy ✓
 - [ ] **Phase 2: Core Pages** - Hero, tjänstesektioner, trust signals
 - [ ] **Phase 3: Content & Conversion** - Kundcase, blogg, konverteringspunkter
 - [ ] **Phase 4: Polish & Launch** - SEO-redirects, WCAG, LLM SEO
@@ -29,9 +29,9 @@ None
 **Plans**: TBD
 
 Plans:
-- [ ] 01-01: Teknikstack-beslut och projektsetup
-- [ ] 01-02: Upsun-deploy pipeline
-- [ ] 01-03: Basstruktur och design tokens
+- [x] 01-01: Teknikstack-beslut och projektsetup ✓
+- [x] 01-02: Upsun-deploy pipeline ✓
+- [x] 01-03: Basstruktur och design tokens ✓
 
 ### Phase 2: Core Pages
 **Goal**: Startsida med hero, de fyra dimensionerna som tjänsteingångar, och trust signals
@@ -73,7 +73,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/3 | Not started | - |
+| 1. Foundation | 3/3 | Complete | 2026-01-13 |
 | 2. Core Pages | 0/3 | Not started | - |
 | 3. Content & Conversion | 0/3 | Not started | - |
 | 4. Polish & Launch | 0/3 | Not started | - |
