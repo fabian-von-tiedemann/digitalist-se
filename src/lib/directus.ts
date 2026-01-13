@@ -8,6 +8,26 @@ type Schema = {
   case_studies_translations: CaseStudyTranslation[]
   blog_posts: BlogPost[]
   blog_posts_translations: BlogPostTranslation[]
+  form_submissions: FormSubmission[]
+}
+
+// Form submission types
+export type FormSubmissionType = 'contact' | 'newsletter' | 'meeting'
+export type FormSubmissionInterest = 'shield' | 'spear' | 'core' | 'brain' | 'general'
+export type FormSubmissionStatus = 'new' | 'contacted' | 'converted' | 'closed'
+
+export type FormSubmission = {
+  id: string
+  date_created: string
+  type: FormSubmissionType
+  name?: string
+  email: string
+  company?: string
+  phone?: string
+  message?: string
+  interest?: FormSubmissionInterest
+  status: FormSubmissionStatus
+  notes?: string
 }
 
 type Page = {
