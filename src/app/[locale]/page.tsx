@@ -5,6 +5,7 @@ import Dimensions from '@/components/Dimensions'
 import ClientLogos from '@/components/ClientLogos'
 import CaseStudies from '@/components/CaseStudies'
 import BlogPreview from '@/components/BlogPreview'
+import CTABanner from '@/components/CTABanner'
 
 type Props = {
   params: Promise<{ locale: string }>
@@ -22,6 +23,7 @@ export default async function Home({ params }: Props) {
       <ClientLogos />
       <CaseStudies locale={locale as 'sv' | 'en'} />
       <BlogPreview locale={locale as 'sv' | 'en'} />
+      <CTABanner variant="primary" />
     </>
   )
 }
