@@ -116,7 +116,11 @@ export default function ContactForm() {
 
   if (formState === 'success') {
     return (
-      <div className="border-2 border-accent-500 bg-accent-50 p-8 shadow-brutal">
+      <div
+        className="border-2 border-accent-500 bg-accent-50 p-8 shadow-brutal"
+        role="alert"
+        aria-live="polite"
+      >
         <div className="flex items-center gap-4">
           <div className="flex h-12 w-12 items-center justify-center border-2 border-accent-500 bg-accent-500">
             <svg
@@ -125,6 +129,7 @@ export default function ContactForm() {
               viewBox="0 0 24 24"
               strokeWidth="2.5"
               stroke="currentColor"
+              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"
@@ -145,14 +150,22 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+      {/* Error announcements for screen readers */}
+      <div aria-live="polite" aria-atomic="true" className="sr-only">
+        {Object.keys(errors).length > 0 && (
+          <span>{Object.values(errors).filter(Boolean).join('. ')}</span>
+        )}
+      </div>
+
       {/* Name field */}
       <div>
         <label
           htmlFor="name"
           className="mb-2 block text-sm font-bold uppercase tracking-wider text-primary-800"
         >
-          {t('name')} *
+          {t('name')} <span aria-hidden="true">*</span>
+          <span className="sr-only">(obligatoriskt)</span>
         </label>
         <input
           type="text"
@@ -161,6 +174,10 @@ export default function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           disabled={formState === 'submitting'}
+          aria-required="true"
+          aria-invalid={errors.name ? 'true' : 'false'}
+          aria-describedby={errors.name ? 'name-error' : undefined}
+          autoComplete="name"
           className={`w-full border-2 bg-white px-4 py-3 text-primary-900 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 ${
             errors.name
               ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
@@ -169,7 +186,9 @@ export default function ContactForm() {
           placeholder={t('placeholders.name')}
         />
         {errors.name && (
-          <p className="mt-1 text-sm font-medium text-red-600">{errors.name}</p>
+          <p id="name-error" className="mt-1 text-sm font-medium text-red-600" role="alert">
+            {errors.name}
+          </p>
         )}
       </div>
 
@@ -179,7 +198,8 @@ export default function ContactForm() {
           htmlFor="email"
           className="mb-2 block text-sm font-bold uppercase tracking-wider text-primary-800"
         >
-          {t('email')} *
+          {t('email')} <span aria-hidden="true">*</span>
+          <span className="sr-only">(obligatoriskt)</span>
         </label>
         <input
           type="email"
@@ -188,6 +208,10 @@ export default function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           disabled={formState === 'submitting'}
+          aria-required="true"
+          aria-invalid={errors.email ? 'true' : 'false'}
+          aria-describedby={errors.email ? 'email-error' : undefined}
+          autoComplete="email"
           className={`w-full border-2 bg-white px-4 py-3 text-primary-900 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 ${
             errors.email
               ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
@@ -196,7 +220,9 @@ export default function ContactForm() {
           placeholder={t('placeholders.email')}
         />
         {errors.email && (
-          <p className="mt-1 text-sm font-medium text-red-600">{errors.email}</p>
+          <p id="email-error" className="mt-1 text-sm font-medium text-red-600" role="alert">
+            {errors.email}
+          </p>
         )}
       </div>
 
@@ -215,6 +241,7 @@ export default function ContactForm() {
           value={formData.company}
           onChange={handleChange}
           disabled={formState === 'submitting'}
+          autoComplete="organization"
           className="w-full border-2 border-primary-900 bg-white px-4 py-3 text-primary-900 transition-all focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
           placeholder={t('placeholders.company')}
         />
@@ -235,6 +262,7 @@ export default function ContactForm() {
           value={formData.phone}
           onChange={handleChange}
           disabled={formState === 'submitting'}
+          autoComplete="tel"
           className="w-full border-2 border-primary-900 bg-white px-4 py-3 text-primary-900 transition-all focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
           placeholder={t('placeholders.phone')}
         />
@@ -270,7 +298,8 @@ export default function ContactForm() {
           htmlFor="message"
           className="mb-2 block text-sm font-bold uppercase tracking-wider text-primary-800"
         >
-          {t('message')} *
+          {t('message')} <span aria-hidden="true">*</span>
+          <span className="sr-only">(obligatoriskt)</span>
         </label>
         <textarea
           id="message"
@@ -279,6 +308,9 @@ export default function ContactForm() {
           onChange={handleChange}
           disabled={formState === 'submitting'}
           rows={5}
+          aria-required="true"
+          aria-invalid={errors.message ? 'true' : 'false'}
+          aria-describedby={errors.message ? 'message-error' : undefined}
           className={`w-full resize-none border-2 bg-white px-4 py-3 text-primary-900 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 ${
             errors.message
               ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
@@ -287,7 +319,7 @@ export default function ContactForm() {
           placeholder={t('placeholders.message')}
         />
         {errors.message && (
-          <p className="mt-1 text-sm font-medium text-red-600">
+          <p id="message-error" className="mt-1 text-sm font-medium text-red-600" role="alert">
             {errors.message}
           </p>
         )}
@@ -295,7 +327,11 @@ export default function ContactForm() {
 
       {/* Error message */}
       {formState === 'error' && (
-        <div className="border-2 border-red-500 bg-red-50 p-4">
+        <div
+          className="border-2 border-red-500 bg-red-50 p-4"
+          role="alert"
+          aria-live="assertive"
+        >
           <div className="flex items-start gap-3">
             <svg
               className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-500"
@@ -303,6 +339,7 @@ export default function ContactForm() {
               viewBox="0 0 24 24"
               strokeWidth="2"
               stroke="currentColor"
+              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"
@@ -315,7 +352,7 @@ export default function ContactForm() {
               <button
                 type="button"
                 onClick={handleRetry}
-                className="mt-2 text-sm font-medium text-red-600 underline hover:text-red-800"
+                className="mt-2 text-sm font-medium text-red-600 underline hover:text-red-800 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
               >
                 {t('errors.retry')}
               </button>
@@ -336,6 +373,7 @@ export default function ContactForm() {
               className="h-5 w-5 animate-spin"
               fill="none"
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               <circle
                 className="opacity-25"
