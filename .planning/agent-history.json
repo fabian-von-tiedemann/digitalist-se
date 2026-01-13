@@ -46,6 +46,51 @@
       "files_modified": ["src/components/TrustSignals.tsx", "src/components/ClientLogos.tsx", "src/app/[locale]/page.tsx", "messages/sv.json", "messages/en.json"],
       "completion_timestamp": "2026-01-13T18:16:00Z",
       "deviations": []
+    },
+    {
+      "agent_id": "a26ce0a",
+      "task_description": "Sequential: Execute 03-01-PLAN.md (Case Studies)",
+      "phase": "03",
+      "plan": "01",
+      "parallel_group": "pg-20260113-phase3",
+      "granularity": "plan",
+      "wave": 1,
+      "depends_on": [],
+      "timestamp": "2026-01-13T19:40:00Z",
+      "status": "completed",
+      "files_modified": ["src/lib/directus.ts", "src/components/CaseCard.tsx", "src/components/CaseStudies.tsx", "src/app/[locale]/case/page.tsx", "src/app/[locale]/case/[slug]/page.tsx", "src/app/[locale]/page.tsx", "messages/sv.json", "messages/en.json"],
+      "completion_timestamp": "2026-01-13T19:46:00Z",
+      "deviations": ["Used mock data instead of Directus (no token)"]
+    },
+    {
+      "agent_id": "aee93ec",
+      "task_description": "Sequential: Execute 03-02-PLAN.md (Blog)",
+      "phase": "03",
+      "plan": "02",
+      "parallel_group": "pg-20260113-phase3",
+      "granularity": "plan",
+      "wave": 2,
+      "depends_on": ["03-01"],
+      "timestamp": "2026-01-13T19:47:00Z",
+      "status": "completed",
+      "files_modified": ["src/lib/directus.ts", "src/components/BlogCard.tsx", "src/components/BlogPreview.tsx", "src/app/[locale]/blogg/page.tsx", "src/app/[locale]/blogg/[slug]/page.tsx", "src/app/[locale]/page.tsx", "messages/sv.json", "messages/en.json"],
+      "completion_timestamp": "2026-01-13T19:53:00Z",
+      "deviations": ["Used mock data, category filter not implemented"]
+    },
+    {
+      "agent_id": "acabf2d",
+      "task_description": "Sequential: Execute 03-03-PLAN.md (Contact/Conversion)",
+      "phase": "03",
+      "plan": "03",
+      "parallel_group": "pg-20260113-phase3",
+      "granularity": "plan",
+      "wave": 3,
+      "depends_on": ["03-02"],
+      "timestamp": "2026-01-13T19:54:00Z",
+      "status": "completed",
+      "files_modified": ["src/lib/directus.ts", "src/app/api/submit/route.ts", "src/components/ContactForm.tsx", "src/components/NewsletterSignup.tsx", "src/components/CTABanner.tsx", "src/app/[locale]/kontakt/page.tsx", "src/app/[locale]/page.tsx", "messages/sv.json", "messages/en.json"],
+      "completion_timestamp": "2026-01-13T20:01:00Z",
+      "deviations": ["Form submissions log to console instead of Directus"]
     }
   ]
 }

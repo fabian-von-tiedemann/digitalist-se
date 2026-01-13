@@ -16,7 +16,7 @@ None
 
 - [x] **Phase 1: Foundation** - Teknikstack, projektstruktur, Upsun-deploy ✓
 - [x] **Phase 2: Core Pages** - Hero, tjänstesektioner, trust signals ✓
-- [ ] **Phase 3: Content & Conversion** - Kundcase, blogg, konverteringspunkter
+- [x] **Phase 3: Content & Conversion** - Kundcase, blogg, konverteringspunkter ✓
 - [ ] **Phase 4: Polish & Launch** - SEO-redirects, WCAG, LLM SEO
 
 ## Phase Details
@@ -51,9 +51,9 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [ ] 03-01: Kundcase-sektion (Socialstyrelsen m.fl.)
-- [ ] 03-02: Blogg och thought leadership
-- [ ] 03-03: Kontakt och konverteringsflöden
+- [x] 03-01: Kundcase-sektion (Socialstyrelsen m.fl.) ✓
+- [x] 03-02: Blogg och thought leadership ✓
+- [x] 03-03: Kontakt och konverteringsflöden ✓
 
 ### Phase 4: Polish & Launch
 **Goal**: SEO-redirects från nuvarande sajt, WCAG-tillgänglighet, LLM SEO, och produktionsredo
@@ -75,5 +75,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete | 2026-01-13 |
 | 2. Core Pages | 3/3 | Complete | 2026-01-13 |
-| 3. Content & Conversion | 0/3 | Not started | - |
+| 3. Content & Conversion | 3/3 | Complete | 2026-01-13 |
 | 4. Polish & Launch | 0/3 | Not started | - |
