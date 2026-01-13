@@ -6,6 +6,7 @@ import { inter, spaceGrotesk, jetbrainsMono } from '@/lib/fonts'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import SkipLink from '@/components/SkipLink'
+import JsonLd from '@/components/JsonLd'
 import "../globals.css"
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://digitalist.se'
@@ -75,8 +76,39 @@ export default async function LocaleLayout({
 
   const messages = await getMessages()
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Digitalist",
+    "alternateName": "Digitalist Open Tech AB",
+    "url": "https://digitalist.se",
+    "logo": "https://digitalist.se/logo.svg",
+    "description": "Sveriges enda öppna helhetspartner för suverän AI i offentlig sektor",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kungsgatan 44",
+      "addressLocality": "Stockholm",
+      "postalCode": "111 35",
+      "addressCountry": "SE"
+    },
+    "sameAs": [],
+    "knowsAbout": ["Artificial Intelligence", "GDPR", "AI Act", "Kubernetes", "Open Source"]
+  }
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Digitalist",
+    "url": "https://digitalist.se",
+    "inLanguage": ["sv", "en"]
+  }
+
   return (
     <html lang={locale} className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        <JsonLd data={organizationSchema} />
+        <JsonLd data={websiteSchema} />
+      </head>
       <body className="font-sans bg-concrete-50 text-primary-900 antialiased">
         <NextIntlClientProvider messages={messages}>
           <SkipLink />
