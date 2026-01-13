@@ -63,7 +63,7 @@ applications:
 
     web:
       commands:
-        start: npm start
+        start: bash start.sh
       locations:
         "/":
           passthru: true
