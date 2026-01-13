@@ -66,6 +66,7 @@ digitalist.se finns idag och ska ersättas. Innehåll ska analyseras och skrivas
 - **Analytics:** Överväg GDPR-vänliga alternativ (Plausible/Matomo) givet målgruppen
 - **Språk:** Arkitektur för i18n från start, svenska som default
 - **SEO:** Redirects från nuvarande sajt obligatoriskt vid launch
+- **Inga SaaS-beroenden:** Allt ska vara open source och kunna köras self-hosted på Upsun
 
 ## Key Decisions
 
@@ -74,7 +75,9 @@ digitalist.se finns idag och ska ersättas. Innehåll ska analyseras och skrivas
 | Unified brand (inte separata sub-brands) | Förenklar köpbeslut, ett Digitalist som gör allt | — Pending |
 | Hybrid approach (thought leadership → konvertering) | Offentlig sektor köper inte direkt, behöver bygga förtroende först | — Pending |
 | Svenska först, i18n-ready | Primär målgrupp är svensk offentlig sektor | — Pending |
-| Teknikstack TBD | Rekommenderas baserat på krav (Upsun-kompatibel, i18n, CMS för redaktörer) | — Pending |
+| **Next.js 14 + Directus + PostgreSQL** | Open source, Directus partner, multi-app på Upsun | ✅ Decided |
+| **next-intl för i18n** | Robust routing, type-safe, svenska default utan /sv prefix | ✅ Decided |
+| **Tailwind CSS + design tokens** | "Myndig Innovation" estetik, snabb utveckling | ✅ Decided |
 
 ---
-*Last updated: 2026-01-13 after initialization*
+*Last updated: 2026-01-13 after tech stack discussion*
