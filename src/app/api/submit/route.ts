@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { createFormSubmission } from '@/lib/directus'
 import type { FormSubmissionType, FormSubmissionInterest } from '@/lib/directus'
 
 // Rate limiting - simple in-memory store (will reset on server restart)
@@ -91,33 +92,33 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Create submission object
-    const submission = {
-      id: crypto.randomUUID(),
-      date_created: new Date().toISOString(),
+    // Create submission in Directus
+    const submission = await createFormSubmission({
       type,
       email: email.trim().toLowerCase(),
-      name: name?.trim() || null,
-      company: company?.trim() || null,
-      phone: phone?.trim() || null,
-      message: message?.trim() || null,
-      interest: interest || null,
-      status: 'new' as const,
-    }
+      name: name?.trim() || undefined,
+      company: company?.trim() || undefined,
+      phone: phone?.trim() || undefined,
+      message: message?.trim() || undefined,
+      interest: interest || undefined,
+    })
 
-    // Log submission (since Directus is unavailable)
-    // TODO: Replace with actual Directus submission when CMS is configured
-    console.log('=== NEW FORM SUBMISSION ===')
-    console.log('Type:', submission.type)
-    console.log('Email:', submission.email)
-    console.log('Name:', submission.name)
-    console.log('Company:', submission.company)
-    console.log('Phone:', submission.phone)
-    console.log('Interest:', submission.interest)
-    console.log('Message:', submission.message)
-    console.log('ID:', submission.id)
-    console.log('Timestamp:', submission.date_created)
-    console.log('===========================')
+    if (!submission) {
+      // Fallback: log to console if Directus fails
+      console.log('=== FORM SUBMISSION (Directus unavailable) ===')
+      console.log('Type:', type)
+      console.log('Email:', email)
+      console.log('Name:', name)
+      console.log('Company:', company)
+      console.log('Interest:', interest)
+      console.log('Timestamp:', new Date().toISOString())
+      console.log('==============================================')
+
+      return NextResponse.json({
+        success: true,
+        message: 'Submission received (offline mode)',
+      })
+    }
 
     return NextResponse.json({
       success: true,
