@@ -14,5 +14,13 @@
     "subheadline": "Sweden's only open full-service partner for AI that complies with GDPR, OSL, and AI Act",
     "cta_primary": "Book a meeting",
     "cta_secondary": "Learn more about our solutions"
+  },
+  "trust": {
+    "badges": {
+      "iso27001": "ISO 27001 certified",
+      "iso9001": "ISO 9001 certified",
+      "gdpr": "GDPR compliant",
+      "swedish": "Swedish hosting"
+    }
   }
 }

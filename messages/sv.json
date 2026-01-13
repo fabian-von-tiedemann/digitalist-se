@@ -14,5 +14,13 @@
     "subheadline": "Sveriges enda öppna helhetspartner för AI som följer GDPR, OSL och AI Act",
     "cta_primary": "Boka ett möte",
     "cta_secondary": "Läs mer om våra lösningar"
+  },
+  "trust": {
+    "badges": {
+      "iso27001": "ISO 27001 certifierad",
+      "iso9001": "ISO 9001 certifierad",
+      "gdpr": "GDPR-kompatibel",
+      "swedish": "Svensk drift"
+    }
   }
 }
