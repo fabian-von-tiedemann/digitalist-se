@@ -62,7 +62,7 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [ ] 04-01: SEO och redirects
+- [x] 04-01: SEO och redirects ✓
 - [ ] 04-02: WCAG-tillgänglighet
 - [ ] 04-03: LLM SEO och slutoptimering
 
@@ -76,4 +76,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Foundation | 3/3 | Complete | 2026-01-13 |
 | 2. Core Pages | 3/3 | Complete | 2026-01-13 |
 | 3. Content & Conversion | 3/3 | Complete | 2026-01-13 |
-| 4. Polish & Launch | 0/3 | Not started | - |
+| 4. Polish & Launch | 1/3 | In progress | - |
