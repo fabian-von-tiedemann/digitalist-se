@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { Link } from '@/i18n/routing'
 import { getCaseStudyBySlug, getCaseStudies, getAllCaseStudySlugs } from '@/lib/directus'
 import CaseCard from '@/components/CaseCard'
+import JsonLd from '@/components/JsonLd'
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>
@@ -31,8 +32,41 @@ export default async function CaseDetailPage({ params }: Props) {
   const allCases = await getCaseStudies(locale as 'sv' | 'en')
   const relatedCases = allCases.filter((c) => c.slug !== slug).slice(0, 2)
 
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://digitalist.se'
+  const caseUrl = `${baseUrl}/${locale}/case/${slug}`
+
+  const caseStudySchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": caseUrl,
+    "headline": caseStudy.title,
+    "description": caseStudy.description,
+    "about": {
+      "@type": "Thing",
+      "name": caseStudy.client
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Digitalist"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Digitalist",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://digitalist.se/logo.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": caseUrl
+    },
+    "inLanguage": locale
+  }
+
   return (
     <main>
+      <JsonLd data={caseStudySchema} />
       {/* Hero section */}
       <section className="py-section bg-primary-50">
         <div className="container mx-auto px-4">
