@@ -3,6 +3,26 @@
     "title": "Sovereign AI for the public sector",
     "subtitle": "Sweden's only open full-service partner"
   },
+  "blog": {
+    "title": "Insights and knowledge",
+    "subtitle": "Thoughts on AI, compliance, and digital transformation for the public sector",
+    "viewAll": "All articles",
+    "readMore": "Read more",
+    "minRead": "min read",
+    "allCategories": "All categories",
+    "categories": {
+      "aiAct": "AI Act",
+      "technicalGuide": "Technical Guide",
+      "caseStory": "Case Story",
+      "strategy": "Strategy"
+    },
+    "article": {
+      "relatedPosts": "Related articles",
+      "author": "Written by",
+      "cta": "Want to discuss how we can help your organization?",
+      "ctaButton": "Book a meeting"
+    }
+  },
   "cases": {
     "title": "Successful case studies",
     "subtitle": "See how we help Sweden's public sector implement sovereign AI with concrete results",

@@ -3,6 +3,26 @@
     "title": "Suverän AI för offentlig sektor",
     "subtitle": "Sveriges enda öppna helhetspartner"
   },
+  "blog": {
+    "title": "Insikter och kunskap",
+    "subtitle": "Tankar om AI, regelefterlevnad och digital transformation för offentlig sektor",
+    "viewAll": "Alla artiklar",
+    "readMore": "Läs mer",
+    "minRead": "min läsning",
+    "allCategories": "Alla kategorier",
+    "categories": {
+      "aiAct": "AI Act",
+      "technicalGuide": "Teknisk guide",
+      "caseStory": "Kundcase",
+      "strategy": "Strategi"
+    },
+    "article": {
+      "relatedPosts": "Relaterade artiklar",
+      "author": "Skriven av",
+      "cta": "Vill du diskutera hur vi kan hjälpa er organisation?",
+      "ctaButton": "Boka ett möte"
+    }
+  },
   "cases": {
     "title": "Framgångsrika kundcase",
     "subtitle": "Se hur vi hjälper Sveriges offentliga sektor att implementera suverän AI med konkreta resultat",
