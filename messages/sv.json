@@ -2,5 +2,11 @@
   "home": {
     "title": "Suverän AI för offentlig sektor",
     "subtitle": "Sveriges enda öppna helhetspartner"
+  },
+  "nav": {
+    "services": "Tjänster",
+    "about": "Om oss",
+    "contact": "Kontakt",
+    "cta": "Boka möte"
   }
 }

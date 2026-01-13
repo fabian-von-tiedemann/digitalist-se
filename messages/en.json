@@ -2,5 +2,11 @@
   "home": {
     "title": "Sovereign AI for the public sector",
     "subtitle": "Sweden's only open full-service partner"
+  },
+  "nav": {
+    "services": "Services",
+    "about": "About us",
+    "contact": "Contact",
+    "cta": "Book a meeting"
   }
 }
