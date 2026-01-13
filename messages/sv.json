@@ -3,6 +3,21 @@
     "title": "Suverän AI för offentlig sektor",
     "subtitle": "Sveriges enda öppna helhetspartner"
   },
+  "cases": {
+    "title": "Framgångsrika kundcase",
+    "subtitle": "Se hur vi hjälper Sveriges offentliga sektor att implementera suverän AI med konkreta resultat",
+    "viewAll": "Se alla case",
+    "readCase": "Läs hela caset",
+    "detail": {
+      "challenge": "Utmaningen",
+      "solution": "Vår lösning",
+      "results": "Resultat",
+      "quote": "Kundens röst",
+      "related": "Relaterade case",
+      "cta": "Vill du veta mer om hur vi kan hjälpa er?",
+      "ctaButton": "Boka ett möte"
+    }
+  },
   "nav": {
     "services": "Tjänster",
     "about": "Om oss",

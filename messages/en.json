@@ -3,6 +3,21 @@
     "title": "Sovereign AI for the public sector",
     "subtitle": "Sweden's only open full-service partner"
   },
+  "cases": {
+    "title": "Successful case studies",
+    "subtitle": "See how we help Sweden's public sector implement sovereign AI with concrete results",
+    "viewAll": "View all cases",
+    "readCase": "Read the full case",
+    "detail": {
+      "challenge": "The Challenge",
+      "solution": "Our Solution",
+      "results": "Results",
+      "quote": "Client Testimonial",
+      "related": "Related cases",
+      "cta": "Want to learn more about how we can help you?",
+      "ctaButton": "Book a meeting"
+    }
+  },
   "nav": {
     "services": "Services",
     "about": "About us",
