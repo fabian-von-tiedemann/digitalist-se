@@ -8,5 +8,11 @@
     "about": "Om oss",
     "contact": "Kontakt",
     "cta": "Boka möte"
+  },
+  "hero": {
+    "headline": "Suverän AI för offentlig sektor",
+    "subheadline": "Sveriges enda öppna helhetspartner för AI som följer GDPR, OSL och AI Act",
+    "cta_primary": "Boka ett möte",
+    "cta_secondary": "Läs mer om våra lösningar"
   }
 }

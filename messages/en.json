@@ -8,5 +8,11 @@
     "about": "About us",
     "contact": "Contact",
     "cta": "Book a meeting"
+  },
+  "hero": {
+    "headline": "Sovereign AI for the public sector",
+    "subheadline": "Sweden's only open full-service partner for AI that complies with GDPR, OSL, and AI Act",
+    "cta_primary": "Book a meeting",
+    "cta_secondary": "Learn more about our solutions"
   }
 }
